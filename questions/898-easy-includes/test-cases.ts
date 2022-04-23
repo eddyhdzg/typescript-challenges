@@ -1,12 +1,5 @@
 import type { Equal, Expect } from "@type-challenges/utils"
-
-// type Includes<T extends readonly any[], U> = any
-
-type Includes<T extends readonly any[], U> = T extends [infer P, ...infer R]
-  ? Equal<P, U> extends true
-    ? true
-    : Includes<R, U>
-  : false
+import { Includes } from "./solution"
 
 type cases = [
   Expect<
